@@ -2,6 +2,8 @@ Veel verzamelde is nooit grappigs van radio 3FM
 
 Om deze te gebruiken in (Linux) fortunes:
 
+https://linux.die.net/man/6/fortune
+
 ```bash
 # location fortune files
 cd /usr/share/games/fortunes/
