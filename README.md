@@ -14,19 +14,29 @@ sed 's/^$/%/' isnooitgrappig
 
 VIM:
 
-#remove ^M
+# remove ^M
 :e ++ff=dos 
 
-The :e ++ff=dos command tells Vim to read the file again, forcing dos file format. Vim will remove CRLF and LF-only line endings, leaving only the text of each line in the buffer.
+# The :e ++ff=dos command tells Vim to read the file again, forcing dos file format. Vim will remove CRLF and LF-only line endings, leaving only the text of each line in the buffer.
 
-then
+# then
 
 :set ff=unix 
 
-and finally
+# and finally
 
 :wq 
 
 # make fortune .dat file
 strfile -c % isnooitgrappig isnooitgrappig.dat
+
+# copy to /usr/share/games/fortunes/
+cp /root/isnooitgrappig/isnooitgrappig /root/isnooitgrappig/isnooitgrappig.dat /usr/share/games/fortunes/
+
+# set symlink
+ln -s isnooitgrappig isnooitgrappig.u8
+
+# in .bashrc:
+
+if [ -f /usr/games/fortune -a -f /usr/games/cowthink ] ; then /usr/games/fortune -a | /usr/games/cowthink -f default ; fi
 ```
